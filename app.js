@@ -15,18 +15,20 @@ const SHOP_LIST = (() => {
   return arr
 })()
 
+
 // A tiny "Router" for routing logic.
-const ROUTES_MAP = {
-  '/': 'A',
-  '/index.html': 'A',
-  '/skeleton.html': 'Skeleton',
-  '/b.html': 'B',
-}
-const CURRENT_ROUTE = ROUTES_MAP[location.pathname]
+const ROUTES_MAP = new Map([
+  ['', 'A'],
+  ['index.html', 'A'],
+  ['skeleton.html', 'Skeleton'],
+  ['b.html', 'B']
+])
+const CURRENT_ROUTE = ROUTES_MAP.get(location.pathname.split('/')[2])
+
 
 // @Instance App 
 const App = {
-
+  
   // @Component List
   List(){
     return SHOP_LIST.map((item, index) => `
@@ -61,11 +63,8 @@ const App = {
     };
   },
   
-  /**
-   * A/B Test render logic here. 
-   **/
+   // A/B Test render logic here. 
   renderToNode($node){
-    // A/B Test
     if(CURRENT_ROUTE == "B" ){
       this.renderPageInCurrentCallStack($node)
       //this.renderPageInMicroTask()
@@ -73,13 +72,13 @@ const App = {
     this.renderPageInTask($node)
   },
 
-  /* 1. Main - Current Event Loop */
+  // 1. Main - Current Event Loop 
   renderPageInCurrentCallStack($node){
     //this.doExpensiveJob()
     $node.innerHTML = this.Page()
   },
 
-  /* 2. Microtask - End of Current Event Loop */
+  // 2. Microtask - End of Current Event Loop 
   renderPageInMicroTask($node){
     Promise.resolve().then(() => {
       this.doExpensiveJob()
@@ -87,7 +86,7 @@ const App = {
     })
   },
 
-  /* 3. Tasks - Next Event Loop */
+  // 3. Tasks - Next Event Loop 
   renderPageInTask($node){
     setTimeout(() => {
       //this.doExpensiveJob()
@@ -95,6 +94,7 @@ const App = {
     }, 0)
   }
 }
+
 
 // Render to #app
 App.renderToNode(document.querySelector('#app'))
