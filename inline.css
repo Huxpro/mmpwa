@@ -1,0 +1,162 @@
+/****** critical rendering CSS (minified in production) ******/
+/* reset */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+  color: #333;
+  font-family: 'Helvetica Neue', Tahoma, Arial, PingFangSC-Regular, 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+  touch-action: manipulation;
+}
+
+body,
+ol,
+ul,
+dl,
+dd,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  outline: none;
+  color: #333;
+  text-decoration: none;
+}
+
+a,
+img {
+  -webkit-touch-callout: none;
+}
+
+input,
+button,
+textarea,
+select {
+  outline: none;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 400;
+}
+
+img {
+  max-width: 100%;
+}
+
+textarea {
+  resize: none;
+}
+
+select {
+  background-color: transparent;
+  appearance: none;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  appearance: button;  /* iOS下的样式问题 */
+}
+
+/* 干掉自动填充的黄色背景 */
+input:-webkit-autofill {
+  box-shadow: 0 0 0px 100px #fff inset;
+}
+
+/* business */
+html {
+  background-color: #f4f4f4;
+}
+header{
+  background: rgb(0, 151, 255);
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 56px;
+  text-align: center;
+  color: white;
+  line-height: 56px;
+  font-size: 24px;
+}
+ul{
+  background: #fff;
+  margin: 56px 0px;
+}
+ul li{
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+  color: #666;
+  list-style: none;
+  display: flex;
+  height: 25vw;
+}
+ul li img.skeleton{
+  width: 100vw;
+}
+ul li img.shop-icon{
+  width: 16vw;
+  height: 16vw;
+  display: block;
+  margin: 4vw 3vw;
+}
+ul li h3{
+  flex: 1;
+  font-size: 4vw;
+  font-weight: bold;
+  margin: 4vw 0;
+}
+ul li h3 span{
+  font-size: 3.2vw;
+  font-weight: 300;
+  line-height: 2;
+}
+
+
+footer{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  height: 56px;
+  box-shadow: 0 -0.026667rem 0.053333rem rgba(0,0,0,.1);
+}
+footer a{
+  display: block;
+  flex: 1;
+  height: 56px;
+  line-height: 56px;
+  text-align: center;
+}
+footer a.active{
+  background: #ccc;
+}

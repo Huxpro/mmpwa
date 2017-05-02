@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1080px" height="261px" viewBox="0 0 1080 261" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>商家列表</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="1080" height="260"></rect>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0.933333333   0 0 0 0 0.933333333   0 0 0 0 0.933333333  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="初始启动页面1" transform="translate(0.000000, -894.000000)">
+            <g id="Group-5">
+                <g id="商家列表" transform="translate(0.000000, 895.000000)">
+                    <g id="Rectangle-18">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                    <rect id="Rectangle-11" fill="#F6F6F6" x="230" y="44" width="533" height="46"></rect>
+                    <rect id="Rectangle-12" fill="#F6F6F6" x="30" y="44" width="172" height="172" rx="4"></rect>
+                    <rect id="Rectangle-13" fill="#F6F6F6" x="230" y="118" width="369" height="30"></rect>
+                    <rect id="Rectangle-14" fill="#F6F6F6" x="230" y="182" width="323" height="30"></rect>
+                    <rect id="Rectangle-15" fill="#F6F6F6" x="812" y="115" width="238" height="39"></rect>
+                    <rect id="Rectangle-16" fill="#F6F6F6" x="808" y="184" width="242" height="30"></rect>
+                    <rect id="Rectangle-17" fill="#F6F6F6" x="917" y="48" width="133" height="37"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
