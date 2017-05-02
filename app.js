@@ -28,7 +28,7 @@ const CURRENT_ROUTE = ROUTES_MAP.get(location.pathname.split('/')[2])
 
 // @Instance App 
 const App = {
-  
+
   // @Component List
   List(){
     return SHOP_LIST.map((item, index) => `
@@ -68,8 +68,9 @@ const App = {
     if(CURRENT_ROUTE == "B" ){
       this.renderPageInCurrentCallStack($node)
       //this.renderPageInMicroTask()
+    } else {
+      this.renderPageInTask($node)
     }
-    this.renderPageInTask($node)
   },
 
   // 1. Main - Current Event Loop 
