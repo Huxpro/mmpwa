@@ -2,7 +2,7 @@
 
 const PRECACHE = 'precache-v3'
 const PRECACHE_LIST = [
-  'offline.html'
+  './offline.html'
 ]
 const RUNTIME = 'runtime-v1'
 const expectedCaches = [PRECACHE, RUNTIME]
