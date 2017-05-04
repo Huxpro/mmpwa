@@ -17,13 +17,20 @@ const SHOP_LIST = (() => {
 
 
 // A tiny "Router" for routing logic.
+function getRoute(){
+  if(location.pathname.match(/\.html$/)){
+    return location.pathname.substr(location.pathname.lastIndexOf('/')+1)
+  } else {
+    return ""
+  }
+}
 const ROUTES_MAP = new Map([
   ['', 'A'],
   ['index.html', 'A'],
   ['skeleton.html', 'Skeleton'],
   ['b.html', 'B']
 ])
-const CURRENT_ROUTE = ROUTES_MAP.get(location.pathname.split('/')[2])
+const CURRENT_ROUTE = ROUTES_MAP.get(getRoute())
 
 
 // @Instance App 
@@ -55,12 +62,13 @@ const App = {
   },
 
   // for testing more serious scenarios
-  doExpensiveJob(){
+  doExpensiveJob($node){
     sum = 0
     for (var i = 300; i >= 0; i--) {
       sum++;
       console.log(sum)
     };
+    $node.innerHTML = this.Page()
   },
   
    // A/B Test render logic here. 
@@ -75,8 +83,8 @@ const App = {
 
   // 1. Main - Current Event Loop 
   renderPageInCurrentCallStack($node){
-    //this.doExpensiveJob()
-    $node.innerHTML = this.Page()
+    this.doExpensiveJob($node)
+    //$node.innerHTML = this.Page()
   },
 
   // 2. Microtask - End of Current Event Loop 
