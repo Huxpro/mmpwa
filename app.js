@@ -62,13 +62,14 @@ const App = {
   },
 
   // for testing more serious scenarios
+  // you could even try render after expensive job.
   doExpensiveJob($node){
     sum = 0
     for (var i = 300; i >= 0; i--) {
       sum++;
       console.log(sum)
     };
-    $node.innerHTML = this.Page()
+    //$node.innerHTML = this.Page()
   },
   
    // A/B Test render logic here. 
@@ -83,14 +84,14 @@ const App = {
 
   // 1. Main - Current Event Loop 
   renderPageInCurrentCallStack($node){
-    this.doExpensiveJob($node)
-    //$node.innerHTML = this.Page()
+    //this.doExpensiveJob($node)
+    $node.innerHTML = this.Page()
   },
 
   // 2. Microtask - End of Current Event Loop 
   renderPageInMicroTask($node){
     Promise.resolve().then(() => {
-      this.doExpensiveJob()
+      //this.doExpensiveJob($node)
       $node.innerHTML = this.Page()
     })
   },
@@ -98,7 +99,7 @@ const App = {
   // 3. Tasks - Next Event Loop 
   renderPageInTask($node){
     setTimeout(() => {
-      //this.doExpensiveJob()
+      //this.doExpensiveJob($node)
       $node.innerHTML = this.Page()
     }, 0)
   }
