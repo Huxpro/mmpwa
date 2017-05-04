@@ -1,8 +1,8 @@
 // app.js 
 
 // Let's make some mock data to render:
-// A long list with 1000 items.
-const SHOP_LIST_LEN = 1000
+// A long list with 5000 items.
+const SHOP_LIST_LEN = 5000
 const SHOP_LIST_ITEM = {
   name:'Awesome PWA Shop',
   imgsrc: 'shop.jpeg'
