@@ -11,6 +11,3 @@ py2:
 py3:
 	python -m http.server 8021
 	open http://localhost:8021
-
-node:
-	@sudo node

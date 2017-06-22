@@ -31,7 +31,9 @@
     // in this demo, we only register SW from entry A
     if(navigator.serviceWorker){
       navigator.serviceWorker
-        .register('/sw.js')
+        // registering the sw.js under this project's root
+        // will override the sw.js set by parents (e.g. huangxuan.me)
+        .register('./sw.js')
         .then((reg) => {
           console.log('Service Worker Registered. ', reg)
         })
