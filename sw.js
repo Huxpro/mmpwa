@@ -1,10 +1,15 @@
 // sw.js 
 
-const PRECACHE = 'precache-v3'
+// CACHE_NAMESPACE
+// CacheStorage is shared between all sites under same domain.
+// A namespace can prevent potential name conflicts and mis-deletion.
+const CACHE_NAMESPACE = 'mmpwa-'
+
+const PRECACHE = CACHE_NAMESPACE + 'precache-v3'
 const PRECACHE_LIST = [
   './offline.html'
 ]
-const RUNTIME = 'runtime-v1'
+const RUNTIME = CACHE_NAMESPACE + 'runtime-v1'
 const expectedCaches = [PRECACHE, RUNTIME]
 
 
@@ -18,12 +23,16 @@ self.oninstall = (event) => {
 }
 
 self.onactivate = (event) => {
-  // delete any caches unexpected for migration.
+  // delete any cache not match expectedCaches for migration.
+  // noticed that we delete by cache instead of by request here.
+  // so we MUST filter out caches opened by this app firstly.
+  // check out sw-precache or workbox-build for an better way.
   event.waitUntil(
-    caches.keys().then(keys => Promise.all(
-      keys
-        .filter(key => !expectedCaches.includes(key))
-        .map(key => caches.delete(key))
+    caches.keys().then(cacheNames => Promise.all(
+      cacheNames
+        .filter(cacheName => cacheName.startsWith(CACHE_NAMESPACE))
+        .filter(cacheName => !expectedCaches.includes(cacheName))
+        .map(cacheName => caches.delete(cacheName))
     ))
   )
 }
