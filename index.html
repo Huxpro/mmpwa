@@ -32,7 +32,7 @@
     if(navigator.serviceWorker){
       navigator.serviceWorker
         // registering the sw.js under this project's root
-        // will override the sw.js set by parents (e.g. huangxuan.me)
+        // will override the sw.js set by parents (e.g. huxpro.github.io)
         .register('./sw.js')
         .then((reg) => {
           console.log('Service Worker Registered. ', reg)
